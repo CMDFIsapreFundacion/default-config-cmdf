@@ -1,6 +1,6 @@
 {
 	"homePage": {
-		"header_text": "<b>WELCOME TO<br />BAHMNI EMR & HOSPITAL SERVICE",
+		"header_text": "<b>Bienvenido al<br /> Registro Clínico CMDF",
 		"logo": "/bahmni/images/bahmniLogoFull.png",
 		"title_text": " "
 	},
@@ -15,20 +15,34 @@
 	"landingPage": [
 		{
 			"enabled": true,
-			"name": "clinicalService",
-			"title": "Clinical Service",
+			"name": "Registro Clínico teleconsulta (S/Clave Unica)",
+			"title": "Registro Clínico teleconsulta (S/Clave Unica)",
 			"logo": "/bahmni/images/app.png",
 			"link": "/bahmni/home"
 		},
 		{
 			"enabled": true,
+			"name": "Registro Clínico Teleconsulta (Clave Unica)",
+			"title": "Registro Clínico Teleconsulta (Clave Unica)",
+			"logo": "/bahmni/images/app-clave.png",
+			"link": "https://apiqa-receta.minsal.cl/oauth/authorize?response_type=code&client_id=42a6d39b-b3af-4b55-b801-7fa135eaec1f&scope=medication-requests medications patients practitioners medication-requests-show locations organizations&state=48fec344-ba33-4d50-b26e&redirect_uri=http://10.100.100.80/claveunica" target="_blank"
+
+		},
+		{
+			"enabled": true,
+			"name": "registroClinicoPresencial",
+			"title": "Registro Clínico Presencial",
+			"logo": "/bahmni/images/app2.png
+		},
+		{
+			"enabled": false,
 			"name": "openelis",
 			"title": "Laboratory",
 			"logo": "/bahmni/images/lab.png",
 			"link": "/openelis"
 		},
 		{
-			"enabled": true,
+			"enabled": false,
 			"name": "odoo",
 			"title": "Stock Inventory & Billing",
 			"logo": "/bahmni/images/bills.png",
@@ -42,14 +56,14 @@
 			"linkPrefix": "payments"
 		},
 		{
-			"enabled": true,
+			"enabled": false,
 			"name": "connect",
 			"title": "Connect",
 			"logo": "/bahmni/images/connect.png",
 			"link": "/bahmni-connect"
 		},
 		{
-			"enabled": true,
+			"enabled": false,
 			"name": "dcm",
 			"title": "Radiology",
 			"logo": "/bahmni/images/pac.png",
@@ -59,7 +73,7 @@
 			"enabled": true,
 			"name": "metabase",
 			"title": "Analytics",
-			"logo": "/bahmni/images/analytics.png",
+			"logo": "/bahmni/images/metabase.png",
 			"link": "/metabase"
 		}
 	]
