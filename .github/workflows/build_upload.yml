@@ -60,7 +60,7 @@ jobs:
           persist-credentials: false
 
       - name: Copy Helm Archive
-        run: mkdir -p helm-charts/default-config/ && cp default-config-${{ env.ARTIFACT_VERSION }}.tgz helm-charts/default-config/
+        run: mkdir -p helm-charts/default-config/ && cp default-config-${{ env.ARTIFACT_VERSION }}.tgz helm-charts/default-config-cmdf/
 
       - name: Helm Index
         working-directory: helm-charts/
