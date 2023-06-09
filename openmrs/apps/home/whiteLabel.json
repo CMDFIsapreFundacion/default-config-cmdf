@@ -25,15 +25,14 @@
 			"name": "Registro Clínico Teleconsulta (Clave Unica)",
 			"title": "Registro Clínico Teleconsulta (Clave Unica)",
 			"logo": "/bahmni/images/app-clave.png",
-			"link": "https://apiqa-receta.minsal.cl/oauth/authorize?response_type=code&client_id=42a6d39b-b3af-4b55-b801-7fa135eaec1f&scope=medication-requests medications patients practitioners medication-requests-show locations organizations&state=48fec344-ba33-4d50-b26e&redirect_uri=http://10.100.100.115/claveunica", 
-			"target": "_blank"
-
+			"link": "https://apiqa-receta.minsal.cl/oauth/authorize?response_type=code&client_id=42a6d39b-b3af-4b55-b801-7fa135eaec1f&scope=medication-requests medications patients practitioners medication-requests-show locations organizations&state=48fec344-ba33-4d50-b26e&redirect_uri=http://10.100.100.80/claveunica",
+			"target" : "_blank"
 		},
 		{
 			"enabled": true,
 			"name": "registroClinicoPresencial",
 			"title": "Registro Clínico Presencial",
-			"logo": "/bahmni/images/app2.png
+			"logo": "/bahmni/images/app2.png"
 		},
 		{
 			"enabled": false,
@@ -75,7 +74,7 @@
 			"name": "metabase",
 			"title": "Analytics",
 			"logo": "/bahmni/images/metabase.png",
-			"link": "/metabase"
+				"link": "/metabase"
 		}
 	]
 }
