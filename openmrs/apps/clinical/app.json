@@ -23,14 +23,15 @@
         "visitUuid"
     ],
     "config": {
+        "preferExtraIdInSearchResults": true,
         "hideConditions": false,
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
-        "quickPrints":false,
-        "allowAdhocTeleConsultation": false,
+        "quickPrints":true,
+        "allowAdhocTeleConsultation": true,
         "teleConsultationDomain": "meet.jit.si",
         "networkConnectivity" : {
-            "showNetworkStatusMessage": false,
+            "showNetworkStatusMessage": true,
             "networkStatusCheckInterval": 20000,
             "locales" : [
                 { "locale" : "fr", "css" : "offline-language-french"},
@@ -57,7 +58,8 @@
         		"programAttributes": [
             		"Id_Number",
             		"Doctor",
-            		"Stage"
+            		"Stage",
+                    "phoneNumber"
         		],
         		"personAttributes": [
             		"class",
@@ -77,7 +79,7 @@
             "Radiology": "Radiology Order",
             "Endoscopy": "Endoscopy Order"
         },
-        "allowConsultationWhenNoOpenVisit": false,
+        "allowConsultationWhenNoOpenVisit": true,
         "defaultVisitType": "OPD",
         "visitTypeForRetrospectiveEntries": "Special OPD",
         "maxConceptSetLevels": 3,
@@ -136,9 +138,7 @@
                     "Condoms",
                     "Pills"
                 ],
-                "Pain management given": true,
-                "Safe Abortion, Remarks": "Remarks",
-                "Malaria, Death Date": "2015-12-01"
+                "Pain management given": true
             }
         },
         "visitPage": {
