@@ -23,7 +23,7 @@
     "config" : {
         "mandatoryPersonAttributes" : [],
         "patientInformation": {},
-        "defaultIdentifierPrefix": "RUT",
+        "defaultIdentifierPrefix": "RUN",
         "showMiddleName": true,
         "showLastName": true,
         "defaultVisitType":"OPD",
