@@ -148,7 +148,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             visitSummary: '='
         },
         template: '<ng-include src="contentUrl"/>'
-    }
+    };
 }]).directive('patientAppointmentsDashboard', ['$http', '$q', '$window','appService', 'virtualConsultService', function ($http, $q, $window, appService, virtualConsultService) {
     var link = function ($scope) {
         $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/patientAppointmentsDashboard.html";
@@ -225,5 +225,49 @@ angular.module('bahmni.common.displaycontrol.custom')
             section: "="
         },
         template: '<ng-include src="contentUrl"/>'
+    };
+}]).directive('orderPrint', ['$q', 'orderService', 'orderTypeService', 'spinner', function ($q, orderService, orderTypeService, spinner) {
+    var controller = function ($scope) {
+        // Implementa la lógica para obtener el UUID del tipo de orden si es necesario.
+        var getOrderTypeUuid = function () {
+            // Por ejemplo, puedes obtenerlo de la configuración o de alguna fuente de datos.
+            // Si no se necesita el UUID del tipo de orden, devuelve null.
+            return "UUID-TU-TIPO-DE-ORDEN"; // Reemplaza con el UUID real si es necesario.
+        };
+
+        var getOrdersForVisit = function (visit) {
+            var orderTypeUuid = getOrderTypeUuid(); // Obtén el UUID del tipo de orden.
+            var params = {
+                patientUuid: $scope.patient.uuid,
+                visitUuid: visit.uuid, // Filtra por el UUID de la visita actual.
+                orderTypeUuid: orderTypeUuid,
+                // Otros parámetros de filtro si es necesario.
+            };
+
+            return orderService.getOrders(params).then(function (response) {
+                visit.orders = response.data; // Almacena las órdenes en el objeto de visita.
+            });
+        };
+
+        var init = function () {
+            // Itera a través de las visitas y obtén las órdenes para cada una.
+            var promises = $scope.visits.map(function (visit) {
+                return getOrdersForVisit(visit);
+            });
+
+            return $q.all(promises);
+        };
+
+        $scope.initialization = init();
+    };
+
+    return {
+        restrict: 'E',
+        controller: controller,
+        templateUrl: 'ruta-a-order-print.html', // Reemplaza 'ruta-a-order-print.html' con la ubicación de tu plantilla HTML.
+        scope: {
+            patient: '=',
+            visits: '=' // Agrega una lista de visitas del paciente.
+        }
     };
 }]);
