@@ -226,48 +226,75 @@ angular.module('bahmni.common.displaycontrol.custom')
         },
         template: '<ng-include src="contentUrl"/>'
     };
-}]).directive('orderPrint', ['$q', 'orderService', 'orderTypeService', 'spinner', function ($q, orderService, orderTypeService, spinner) {
-    var controller = function ($scope) {
-        // Implementa la lógica para obtener el UUID del tipo de orden si es necesario.
-        var getOrderTypeUuid = function () {
-            // Por ejemplo, puedes obtenerlo de la configuración o de alguna fuente de datos.
-            // Si no se necesita el UUID del tipo de orden, devuelve null.
-            return "UUID-TU-TIPO-DE-ORDEN"; // Reemplaza con el UUID real si es necesario.
-        };
-
-        var getOrdersForVisit = function (visit) {
-            var orderTypeUuid = getOrderTypeUuid(); // Obtén el UUID del tipo de orden.
-            var params = {
-                patientUuid: $scope.patient.uuid,
-                visitUuid: visit.uuid, // Filtra por el UUID de la visita actual.
-                orderTypeUuid: orderTypeUuid,
-                // Otros parámetros de filtro si es necesario.
+}]).    .directive('orderPrint', ['$q', 'orderService', 'orderTypeService', 'spinner', function ($q, orderService, orderTypeService, spinner) {
+        var controller = function ($scope) {
+            var getOrderTypeUuid = function () {
+                // Implementa la lógica para obtener el UUID del tipo de orden si es necesario.
+                return null;
             };
 
-            return orderService.getOrders(params).then(function (response) {
-                visit.orders = response.data; // Almacena las órdenes en el objeto de visita.
-            });
+            var getOrders = function () {
+                var orderTypeUuid = getOrderTypeUuid(); // Obtén el UUID del tipo de orden.
+                var params = {
+                    patientUuid: $scope.patient.uuid,
+                    orderTypeUuid: orderTypeUuid,
+                    // Otros parámetros de filtro si es necesario.
+                };
+
+                return orderService.getOrders(params).then(function (response) {
+                    $scope.visits = groupOrdersByVisit(response.data);
+                });
+            };
+
+            var groupOrdersByVisit = function (orders) {
+                var groupedVisits = [];
+                orders.forEach(function (order) {
+                    var visit = groupedVisits.find(function (v) {
+                        return v.visitUuid === order.visitUuid;
+                    });
+                    if (!visit) {
+                        visit = {
+                            visitUuid: order.visitUuid,
+                            visitDate: order.visitDate,
+                            orders: []
+                        };
+                        groupedVisits.push(visit);
+                    }
+                    visit.orders.push(order);
+                });
+                return groupedVisits;
+            };
+
+            var init = function () {
+                return getOrders();
+            };
+
+            $scope.initialization = init();
+            
+            $scope.printOrder = function (order) {
+                var printWindow = window.open('', '', 'width=600,height=600');
+                printWindow.document.open();
+                printWindow.document.write('<html><head><title>Imprimir Orden</title></head><body>');
+
+                // Agrega el contenido de la orden que deseas imprimir aquí
+                // Puedes usar la variable 'order' para acceder a los detalles de la orden
+                printWindow.document.write('<h3>' + order.orderName + '</h3>');
+                printWindow.document.write('<p>' + order.orderDetails + '</p>');
+
+                printWindow.document.write('</body></html>');
+                printWindow.document.close();
+                printWindow.print();
+                printWindow.close();
+            };
         };
 
-        var init = function () {
-            // Itera a través de las visitas y obtén las órdenes para cada una.
-            var promises = $scope.visits.map(function (visit) {
-                return getOrdersForVisit(visit);
-            });
-
-            return $q.all(promises);
+        return {
+            restrict: 'E',
+            controller: controller,
+            templateUrl: '/customDisplayControl/views/order-print.html', // Reemplaza 'ruta-a-order-print.html' con la ubicación de tu plantilla HTML.
+            scope: {
+                patient: '='
+                // Agrega otras propiedades del ámbito según sea necesario.
+            }
         };
-
-        $scope.initialization = init();
-    };
-
-    return {
-        restrict: 'E',
-        controller: controller,
-        templateUrl: 'ruta-a-order-print.html', // Reemplaza 'ruta-a-order-print.html' con la ubicación de tu plantilla HTML.
-        scope: {
-            patient: '=',
-            visits: '=' // Agrega una lista de visitas del paciente.
-        }
-    };
 }]);
