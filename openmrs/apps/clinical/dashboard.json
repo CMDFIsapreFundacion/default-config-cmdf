@@ -171,6 +171,17 @@
                     "logo": "../images/bahmniLogo.png"
                 }
             },
+            "orderPrint": {
+                "sections": {
+                    "Order-Print": {
+                        "type": "custom",
+                        "config": {
+                            "title": "Order Print",
+                            "template": "<patient-print-dashboard section='config' patient='patient'></patient-print-dashboard>"
+                        }
+                    }
+                }   
+            },
             "radiologyOrders":{
                 "orderType":"Radiology Order",
                 "type":"ordersControl",

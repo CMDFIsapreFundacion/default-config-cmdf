@@ -226,8 +226,10 @@ angular.module('bahmni.common.displaycontrol.custom')
         },
         template: '<ng-include src="contentUrl"/>'
     };
-}]).    .directive('orderPrint', ['$q', 'orderService', 'orderTypeService', 'spinner', function ($q, orderService, orderTypeService, spinner) {
+}])    .directive('orderPrint', ['$q', 'orderService', 'orderTypeService', 'spinner', function ($q, orderService, orderTypeService, spinner) {
         var controller = function ($scope) {
+
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/order-print.html";
             var getOrderTypeUuid = function () {
                 // Implementa la lógica para obtener el UUID del tipo de orden si es necesario.
                 return null;
