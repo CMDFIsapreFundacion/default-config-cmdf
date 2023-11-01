@@ -161,7 +161,6 @@ angular.module('bahmni.common.displaycontrol.custom')
     }
 }]).directive('patientAppointmentsDashboard', ['$http', '$q', '$window','appService', 'virtualConsultService', function ($http, $q, $window, appService, virtualConsultService) {
     var link = function ($scope) {
-        console.log("patientAppointmentsDashboard");
         $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/patientAppointmentsDashboard.html";
         var getUpcomingAppointments = function () {
             var params = {
