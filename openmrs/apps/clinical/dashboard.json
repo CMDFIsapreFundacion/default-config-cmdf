@@ -39,7 +39,7 @@
             },
 	    "holaMundo": {
                 "type": "custom",
-                "displayOrder": 27,
+                "displayOrder": 3,
                 "config": {
                     "title": "Hola Mundo",
                     "template": "<holaMundo></holaMundo>"
