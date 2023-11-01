@@ -16,6 +16,15 @@ angular.module('bahmni.common.displaycontrol.custom')
                 template: '<ng-include src="contentUrl"/>',
                 link: link
             }
+    }]).directive('holaMundo', [ function () {
+            var link = function ($scope,element) {
+                alert("hola mundo");
+            };
+            return {
+                restrict: 'E',
+                template: '<ng-include src="contentUrl"/>',
+                link: link
+            }
     }]).directive('deathCertificate', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
         var link = function ($scope) {
             var conceptNames = ["WEIGHT"];
