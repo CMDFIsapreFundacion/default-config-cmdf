@@ -37,6 +37,14 @@
                 "showDetailsButton":true,
                 "displayOrder":1
             },
+	    "holaMundo": {
+                "type": "custom",
+                "displayOrder": 27,
+                "config": {
+                    "title": "Hola Mundo",
+                    "template": "<holaMundo></holaMundo>"
+                }
+            },
             "navigationLinksControl":{  
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type":"navigationLinksControl",
