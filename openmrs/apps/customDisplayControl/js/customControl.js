@@ -17,9 +17,9 @@ angular.module('bahmni.common.displaycontrol.custom')
                 link: link
             }
     }]).directive('holaMundo', [ 'appService', function (appService) {
-            var link = function ($scope,element) {
+            var link = function ($scope) {
+                console.log("holaMundo");
                 $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/holaMundo.html";
-                alert("hola mundo");
             };
             return {
                 restrict: 'E',
