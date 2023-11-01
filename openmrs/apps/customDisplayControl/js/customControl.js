@@ -16,13 +16,14 @@ angular.module('bahmni.common.displaycontrol.custom')
                 template: '<ng-include src="contentUrl"/>',
                 link: link
             }
-    }]).directive('holaMundo', [ function () {
+    }]).directive('holaMundo', [ 'appService', function (appService) {
             var link = function ($scope,element) {
+                $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/holaMundo.html";
                 alert("hola mundo");
             };
             return {
                 restrict: 'E',
-                template: '<div>Hola Mundo!!</div>',
+                template: '<ng-include src="contentUrl"/>',
                 link: link
             }
     }]).directive('deathCertificate', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
