@@ -22,7 +22,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             };
             return {
                 restrict: 'E',
-                template: '<ng-include src="contentUrl"/>',
+                template: '<div>Hola Mundo!!</div>',
                 link: link
             }
     }]).directive('deathCertificate', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
