@@ -37,12 +37,12 @@
                 "showDetailsButton":true,
                 "displayOrder":1
             },
-	    "holaMundo": {
+	        "holaMundo": {
                 "type": "custom",
                 "displayOrder": 3,
                 "config": {
                     "title": "Hola Mundo",
-                    "template": "<holaMundo></holaMundo>"
+                    "template": "<hola-Mundo></hola-Mundo>"
                 }
             },
             "navigationLinksControl":{  
