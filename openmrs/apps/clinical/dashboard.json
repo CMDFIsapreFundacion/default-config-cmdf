@@ -37,24 +37,6 @@
                 "showDetailsButton":true,
                 "displayOrder":1
             },
-            "holaMundo": {
-                "title": "Hola Mundo",
-                "printing": {
-                    "title": "Bahmni",
-                    "header": "Hola Mundo",
-                    "logo": "../images/bahmniLogo.png"
-                },
-                "sections": {
-                    "Hola Mundo": {
-                        "type": "custom",
-                        "config": {
-                            "title": "Hola Mundo",
-                            "template": "<holaMundo></holaMundo>"
-                        },
-                        "displayOrder":27 
-                    }
-                }
-            },
             "navigationLinksControl":{  
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "type":"navigationLinksControl",
