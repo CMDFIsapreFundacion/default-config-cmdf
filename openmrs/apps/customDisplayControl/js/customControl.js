@@ -23,8 +23,12 @@ angular.module('bahmni.common.displaycontrol.custom')
             };
             return {
                 restrict: 'E',
-                template: '<ng-include src="contentUrl"/>',
-                link: link
+                link: link,
+                scope: {
+                    config: "=",
+                    visitSummary: "="
+                },
+                template: '<ng-include src="contentUrl"/>'
             }
     }]).directive('deathCertificate', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
         var link = function ($scope) {
