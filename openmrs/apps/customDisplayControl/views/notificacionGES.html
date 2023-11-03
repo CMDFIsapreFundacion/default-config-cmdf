@@ -20,7 +20,10 @@
                                    <button onclick="window.location.href='#'">Notificar</button>
                                    <button onclick="window.location.href='#'">Descartar</button>
                             </td>
-                            
+                            <td ng-if="notificacion.estado == 'Notificada'">
+                                   <button onclick="window.location.href='#'">Ver</button>
+                            </td>
+                            <td ng-if="notificacion.estado == 'Descartada'"></td>
                      </tr>
               </tbody>
        </table>
