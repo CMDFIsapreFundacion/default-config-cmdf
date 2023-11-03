@@ -16,7 +16,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                 template: '<ng-include src="contentUrl"/>',
                 link: link
             }
-    }]).directive('notificacionGES', [ 'appService', function (appService) {
+    }]).directive('notificacionGes', [ 'appService', function (appService) {
             var link = function ($scope) {
                 $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
             };

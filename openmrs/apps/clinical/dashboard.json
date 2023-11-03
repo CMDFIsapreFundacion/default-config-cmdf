@@ -42,7 +42,7 @@
                 "displayOrder": 3,
                 "config": {
                     "title": "Notificacion GES",
-                    "template": "<notificacion-GES></notificacion-GES>"
+                    "template": "<notificacion-ges></notificacion-ges>"
                 }
             },
             "navigationLinksControl":{  
