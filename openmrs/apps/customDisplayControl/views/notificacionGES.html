@@ -1,4 +1,21 @@
 <section class="app-dashboard-integration">
        <h2 class="section-title">{{::"DASHBOARD_TITLE_NOTIFICACION_GES" | translate }}</h2>
-       Lorem ipsum dolor sit amet consectetur adipiscing elit malesuada aenean leo sagittis lacus nisi vitae feugiat, ut inceptos eu euismod pulvinar ultricies volutpat mollis primis quam conubia phasellus nascetur cras.
+       <table>
+              <thead>
+                     <tr>
+                            <th>nombre</th>
+                            <th>problema_ges</th>
+                            <th>fecha</th>
+                            <th>estado</th>
+                     </tr>
+              </thead>
+              <tbody>
+                     <tr ng-repeat="notificacion in notificaciones">
+                            <td>{{ notificacion.paciente }}</td>
+                            <td>{{ notificacion.problema_ges }}</td>
+                            <td>{{ notificacion.fecha }}</td>
+                            <td>{{ notificacion.estado }}</td>
+                     </tr>
+              </tbody>
+       </table>
 </section>

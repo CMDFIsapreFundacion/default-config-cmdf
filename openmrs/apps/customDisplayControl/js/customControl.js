@@ -19,13 +19,20 @@ angular.module('bahmni.common.displaycontrol.custom')
     }]).directive('notificacionGes', [ 'appService', function (appService) {
             var link = function ($scope) {
                 $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
-            };
+                fetch('http://localhost:4000/ges')
+                .then(response => response.json())
+                .then(data => {
+                    $scope.notificaciones = data;
+                    console.log(data);
+                })
+                .catch(error => console.error(error));
+            }   
             return {
                 restrict: 'E',
                 link: link,
                 scope: {
                     config: "=",
-                    visitSummary: "="
+                    section: "="
                 },
                 template: '<ng-include src="contentUrl"/>'
             }
