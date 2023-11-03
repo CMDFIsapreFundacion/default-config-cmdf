@@ -7,6 +7,7 @@
                             <th>problema_ges</th>
                             <th>fecha</th>
                             <th>estado</th>
+                            <th>acciones</th>
                      </tr>
               </thead>
               <tbody>
@@ -15,6 +16,11 @@
                             <td>{{ notificacion.problema_ges }}</td>
                             <td>{{ notificacion.fecha }}</td>
                             <td>{{ notificacion.estado }}</td>
+                            <td ng-if="notificacion.estado == 'Pendiente'">
+                                   <button onclick="window.location.href='#'">Notificar</button>
+                                   <button onclick="window.location.href='#'">Descartar</button>
+                            </td>
+                            
                      </tr>
               </tbody>
        </table>
