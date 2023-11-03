@@ -38,8 +38,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                             console.log(data);
                         });
                     })
-                    //actualizar template
-                    $scope.$apply();
+                    .catch(error => console.error(error));
                     
                 }
                     
