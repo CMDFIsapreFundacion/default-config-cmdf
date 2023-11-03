@@ -33,8 +33,10 @@ angular.module('bahmni.common.displaycontrol.custom')
                     fetch('http://localhost:4000/ges2')
                     .then(response => response.json())
                     .then(data => {
-                        $scope.notificaciones = data;
-                        console.log(data);
+                        $scope.$evalAsync(function() {
+                            $scope.notificaciones = data;
+                            console.log(data);
+                        });
                     })
                     //actualizar template
                     $scope.$apply();
