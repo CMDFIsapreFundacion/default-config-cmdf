@@ -16,9 +16,9 @@ angular.module('bahmni.common.displaycontrol.custom')
                 template: '<ng-include src="contentUrl"/>',
                 link: link
             }
-    }]).directive('holaMundo', [ 'appService', function (appService) {
+    }]).directive('notificacionGES', [ 'appService', function (appService) {
             var link = function ($scope) {
-                $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/holaMundo.html";
+                $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
             };
             return {
                 restrict: 'E',

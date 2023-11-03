@@ -41,8 +41,8 @@
                 "type": "custom",
                 "displayOrder": 3,
                 "config": {
-                    "title": "Hola Mundo",
-                    "template": "<hola-Mundo></hola-Mundo>"
+                    "title": "Notificacion GES",
+                    "template": "<notificacion-GES></notificacion-GES>"
                 }
             },
             "navigationLinksControl":{  
