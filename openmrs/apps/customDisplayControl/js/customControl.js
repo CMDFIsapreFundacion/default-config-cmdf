@@ -36,6 +36,8 @@ angular.module('bahmni.common.displaycontrol.custom')
                         $scope.notificaciones = data;
                         console.log(data);
                     })
+                    //actualizar template
+                    $scope.$apply();
                     
                 }
                     
