@@ -26,6 +26,11 @@ angular.module('bahmni.common.displaycontrol.custom')
                     console.log(data);
                 })
                 .catch(error => console.error(error));
+
+                $scope.descartarNotificacion = function () {
+                    console.log("descartar notificacion");
+                }
+                    
             }   
             return {
                 restrict: 'E',

@@ -17,11 +17,11 @@
                             <td>{{ notificacion.fecha }}</td>
                             <td>{{ notificacion.estado }}</td>
                             <td ng-if="notificacion.estado == 'Pendiente'">
-                                   <button onclick="window.location.href='#'">Notificar</button>
-                                   <button onclick="window.location.href='#'">Descartar</button>
+                                   <button onclick="window.open('http://localhost/formularioges', '_blank')">Notificar</button>
+                                   <button ng-click="descartarNotificacion()">Descartar</button>
                             </td>
                             <td ng-if="notificacion.estado == 'Notificada'">
-                                   <button onclick="window.location.href='#'">Ver</button>
+                                   <button onclick="window.open('http://localhost/formularioges', '_blank')">Ver</button>
                             </td>
                             <td ng-if="notificacion.estado == 'Descartada'"></td>
                      </tr>
