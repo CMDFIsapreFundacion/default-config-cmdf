@@ -15,7 +15,6 @@
                             <td>{{ notificacion.paciente }}</td>
                             <td>{{ notificacion.problema_ges }}</td>
                             <td>{{ notificacion.fecha }}</td>
-                            <td>{{ notificacion.estado }}</td>
                             <td ng-if="notificacion.estado == 'P'">Pendiente</td>
                             <td ng-if="notificacion.estado == 'N'">Notificada</td>
                             <td ng-if="notificacion.estado == 'D'">Descartada</td>
