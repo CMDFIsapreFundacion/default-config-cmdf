@@ -30,7 +30,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                 $scope.descartarNotificacion = function () {
                     console.log("descartar notificacion");
                     //actualizar contenido del template
-                    fetch('http://localhost:4000/ges2')
+                    fetch('http://localhost:4000/ges')
                     .then(response => response.json())
                     .then(data => {
                         $scope.$evalAsync(function() {
