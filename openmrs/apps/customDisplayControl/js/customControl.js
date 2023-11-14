@@ -19,8 +19,8 @@ angular.module('bahmni.common.displaycontrol.custom')
     }]).directive('notificacionGes', [ 'appService', function (appService) {
             var link = function ($scope) {
                 $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
-                console.log($scope.patient.uuid);
-                fetch('http://localhost:4000/ges/'+$scope.patient.uuid)
+                console.log($scope);
+                fetch('http://localhost:4000/ges/ABC200000')
                 .then(response => response.json())
                 .then(data => {
                     $scope.notificaciones = data;
