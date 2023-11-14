@@ -19,6 +19,7 @@ angular.module('bahmni.common.displaycontrol.custom')
     }]).directive('notificacionGes', [ 'appService', function (appService) {
             var link = function ($scope) {
                 $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
+                console.log($scope.patient);
                 fetch('http://localhost:4000/ges')
                 .then(response => response.json())
                 .then(data => {
@@ -27,9 +28,28 @@ angular.module('bahmni.common.displaycontrol.custom')
                 })
                 .catch(error => console.error(error));
 
-                $scope.descartarNotificacion = function () {
+                $scope.descartarNotificacion = function (id) {
                     console.log("descartar notificacion");
+                    //actualizar estado de la notificacion con put a la api enviando el id de la notificacion y el estado DESCARTADO
+                    fetch('http://localhost:4000/ges/'+id+'/D', {
+                        method: 'PUT',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        }
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+
+                    //esperar que termine de actualizar estado
+
+
                     //actualizar contenido del template
+
                     fetch('http://localhost:4000/ges')
                     .then(response => response.json())
                     .then(data => {
