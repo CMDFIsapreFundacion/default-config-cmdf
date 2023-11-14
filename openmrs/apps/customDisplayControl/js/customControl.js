@@ -20,7 +20,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             var link = function ($scope) {
                 $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
                 console.log($scope);
-                console.log($scope.patient.uuid);
+                console.log($scope.patient);
 
                 fetch('http://localhost:4000/ges/ABC200000')
                 .then(response => response.json())
@@ -210,6 +210,8 @@ angular.module('bahmni.common.displaycontrol.custom')
 }]).directive('patientAppointmentsDashboard', ['$http', '$q', '$window','appService', 'virtualConsultService', function ($http, $q, $window, appService, virtualConsultService) {
     var link = function ($scope) {
         $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/patientAppointmentsDashboard.html";
+        console.log("inside patientAppointmentsDashboard");
+        console.log($scope);
         var getUpcomingAppointments = function () {
             var params = {
                 q: "bahmni.sqlGet.upComingAppointments",
