@@ -20,7 +20,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             var link = function ($scope) {
                 $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
                 console.log($scope);
-                console.log($$scope.patient.uuid);
+                console.log($scope.patient.uuid);
 
                 fetch('http://localhost:4000/ges/ABC200000')
                 .then(response => response.json())
