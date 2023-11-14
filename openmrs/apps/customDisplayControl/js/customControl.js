@@ -16,11 +16,10 @@ angular.module('bahmni.common.displaycontrol.custom')
                 template: '<ng-include src="contentUrl"/>',
                 link: link
             }
-    }]).directive('notificacionGes', [ 'observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
+    }]).directive('notificacionGes', ['$http', '$q', '$window','appService', 'virtualConsultService', function ($http, $q, $window, appService, virtualConsultService) {
             var link = function ($scope) {
                 $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
                 console.log($scope);
-                console.log($scope.patient);
 
                 fetch('http://localhost:4000/ges/ABC200000')
                 .then(response => response.json())
@@ -41,26 +40,26 @@ angular.module('bahmni.common.displaycontrol.custom')
                     })
                     .then(response => response.json())
                     .then(data => {
-                        console.log('Success:', data);
+                        console.log('Descartar Success:', data);
+                        //actualizar contenido del template
+
+                        fetch('http://localhost:4000/ges')
+                        .then(response => response.json())
+                        .then(data => {
+                            $scope.$evalAsync(function() {
+                                $scope.notificaciones = data;
+                                console.log(data);
+                            });
+                        })
+                        .catch(error => console.error(error));
                     })
                     .catch((error) => {
                         console.error('Error:', error);
                     });
 
-                    //esperar que termine de actualizar estado
 
 
-                    //actualizar contenido del template
-
-                    fetch('http://localhost:4000/ges')
-                    .then(response => response.json())
-                    .then(data => {
-                        $scope.$evalAsync(function() {
-                            $scope.notificaciones = data;
-                            console.log(data);
-                        });
-                    })
-                    .catch(error => console.error(error));
+                    
                     
                 }
                     
