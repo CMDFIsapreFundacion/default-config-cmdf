@@ -37,12 +37,12 @@
                 "showDetailsButton":true,
                 "displayOrder":1
             },
-	        "holaMundo": {
+	        "notificacionGes": {
                 "type": "custom",
                 "displayOrder": 3,
                 "config": {
                     "title": "Notificacion GES",
-                    "template": "<notificacion-ges></notificacion-ges>"
+                    "template": "<notificacion-ges section='config' patient='patient'></notificacion-ges>"
                 }
             },
             "navigationLinksControl":{  
