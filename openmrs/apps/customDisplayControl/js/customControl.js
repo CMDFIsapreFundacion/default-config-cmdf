@@ -16,13 +16,13 @@ angular.module('bahmni.common.displaycontrol.custom')
                 template: '<ng-include src="contentUrl"/>',
                 link: link
             }
-            
+
     }]).directive('notificacionGes', ['$http', '$q', '$window','appService', 'virtualConsultService', function ($http, $q, $window, appService, virtualConsultService) {
             var link = function ($scope) {
                 $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
                 console.log($scope);
 
-                fetch('http://localhost:4000/ges/ABC200000')
+                fetch('http://localhost:4000/ges/'+$scope.patient.identifier)
                 .then(response => response.json())
                 .then(data => {
                     $scope.notificaciones = data;
