@@ -16,6 +16,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                 template: '<ng-include src="contentUrl"/>',
                 link: link
             }
+            
     }]).directive('notificacionGes', ['$http', '$q', '$window','appService', 'virtualConsultService', function ($http, $q, $window, appService, virtualConsultService) {
             var link = function ($scope) {
                 $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
@@ -68,7 +69,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                 restrict: 'E',
                 link: link,
                 scope: {
-                    config: "=",
+                    patient: "=",
                     section: "="
                 },
                 template: '<ng-include src="contentUrl"/>'
