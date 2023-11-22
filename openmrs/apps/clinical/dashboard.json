@@ -42,8 +42,7 @@
                 "displayOrder": 3,
                 "config": {
                     "title": "Notificacion GES",
-                    "template": "<notificacion-ges section='config' patient='patient'></notificacion-ges>",
-                    "showProvider":true
+                    "template": "<notificacion-ges section='config' patient='patient'></notificacion-ges>"
                 }
             },
             "navigationLinksControl":{  

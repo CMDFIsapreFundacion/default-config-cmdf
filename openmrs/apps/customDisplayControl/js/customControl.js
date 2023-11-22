@@ -64,7 +64,8 @@ angular.module('bahmni.common.displaycontrol.custom')
                 console.log("Notificar:" + id);
                 //Abre el formulario para notificar en una nueva ventana del navegador
                 //agregar en url el prestador desde el scope
-                $window.open('http://localhost:5000/notificacionges/?id=' + id + '&practitioner=' + $scope.practitioner.uuid);
+                $window.open('http://localhost:5000/notificacionges/id=' + id);
+                // + '&practitioner=' + $scope.practitioner.uuid);
             }
         }
         
@@ -74,8 +75,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             scope: {
                 patient: "=",
                 section: "=",
-                config: "=",
-                provider: '='
+                config: "="
             },
             template: '<ng-include src="contentUrl"/>'
         }
