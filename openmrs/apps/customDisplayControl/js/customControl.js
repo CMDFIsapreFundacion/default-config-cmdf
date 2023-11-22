@@ -73,7 +73,9 @@ angular.module('bahmni.common.displaycontrol.custom')
             link: link,
             scope: {
                 patient: "=",
-                section: "="
+                section: "=",
+                config: "=",
+                visitSummary: '='
             },
             template: '<ng-include src="contentUrl"/>'
         }
