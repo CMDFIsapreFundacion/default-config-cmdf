@@ -64,7 +64,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                 console.log("Notificar:" + id);
                 //Abre el formulario para notificar en una nueva ventana del navegador
                 //agregar en url el prestador desde el scope
-                $window.open('http://localhost:5000/notificacionges/id=' + id);
+                $window.open('http://localhost:5000/notificacionges/' + id);
                 // + '&practitioner=' + $scope.practitioner.uuid);
             }
         }
