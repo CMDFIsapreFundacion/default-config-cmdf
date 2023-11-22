@@ -17,7 +17,7 @@
                             <td ng-if="notificacion.estado == 'N'">Notificada</td>
                             <td ng-if="notificacion.estado == 'D'">Descartada</td>
                             <td ng-if="notificacion.estado == 'P'">
-                                   <button onclick="window.open('http://localhost/formularioges', '_blank')">Notificar</button>
+                                   <button ng-click="Notificar(notificacion.id)">Notificar</button>
                                    <button ng-click="descartarNotificacion(notificacion.id)">Descartar</button>
                             </td>
                             <td ng-if="notificacion.estado == 'N'">

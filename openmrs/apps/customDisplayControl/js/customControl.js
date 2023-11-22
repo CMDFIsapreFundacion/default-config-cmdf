@@ -2,27 +2,27 @@
 
 angular.module('bahmni.common.displaycontrol.custom')
     .directive('birthCertificate', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
-            var link = function ($scope) {
-                console.log("inside birth certificate");
-                var conceptNames = ["HEIGHT"];
-                $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/birthCertificate.html";
-                spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
-                    $scope.observations = response.data;
-                }));
-            };
+        var link = function ($scope) {
+            console.log("inside birth certificate");
+            var conceptNames = ["HEIGHT"];
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/birthCertificate.html";
+            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                $scope.observations = response.data;
+            }));
+        };
 
-            return {
-                restrict: 'E',
-                template: '<ng-include src="contentUrl"/>',
-                link: link
-            }
+        return {
+            restrict: 'E',
+            template: '<ng-include src="contentUrl"/>',
+            link: link
+        }
 
-    }]).directive('notificacionGes', ['$http', '$q', '$window','appService', 'virtualConsultService', function ($http, $q, $window, appService, virtualConsultService) {
-            var link = function ($scope) {
-                $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
-                console.log($scope);
+    }]).directive('notificacionGes', ['$http', '$q', '$window', 'appService', 'virtualConsultService', function ($http, $q, $window, appService, virtualConsultService) {
+        var link = function ($scope) {
+            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
+            console.log($scope);
 
-                fetch('http://localhost:4000/ges/'+$scope.patient.identifier)
+            fetch('http://localhost:4000/ges?patientidentifier=' + $scope.patient.identifier)
                 .then(response => response.json())
                 .then(data => {
                     $scope.notificaciones = data;
@@ -30,50 +30,53 @@ angular.module('bahmni.common.displaycontrol.custom')
                 })
                 .catch(error => console.error(error));
 
-                $scope.descartarNotificacion = function (id) {
-                    console.log("descartar notificacion"+id);
-                    //actualizar estado de la notificacion con put a la api enviando el id de la notificacion y el estado DESCARTADO
-                    fetch('http://localhost:4000/ges/'+id+'/D', {
-                        method: 'PUT',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        }
-                    })
+            $scope.descartarNotificacion = function (id) {
+                console.log("descartar notificacion" + id);
+                //actualizar estado de la notificacion con put a la api enviando el id de la notificacion y el estado DESCARTADO
+                fetch('http://localhost:4000/ges/' + id + '/D', {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                })
                     .then(response => response.json())
                     .then(data => {
                         console.log('Descartar Success:', data);
                         //actualizar contenido del template
 
-                        fetch('http://localhost:4000/ges')
-                        .then(response => response.json())
-                        .then(data => {
-                            $scope.$evalAsync(function() {
-                                $scope.notificaciones = data;
-                                console.log(data);
-                            });
-                        })
-                        .catch(error => console.error(error));
+                        fetch('http://localhost:4000/ges?patientidentifier=' + $scope.patient.identifier)
+                            .then(response => response.json())
+                            .then(data => {
+                                $scope.$evalAsync(function () {
+                                    $scope.notificaciones = data;
+                                    console.log(data);
+                                });
+                            })
+                            .catch(error => console.error(error));
                     })
                     .catch((error) => {
                         console.error('Error:', error);
                     });
 
-
-
-                    
-                    
-                }
-                    
-            }   
-            return {
-                restrict: 'E',
-                link: link,
-                scope: {
-                    patient: "=",
-                    section: "="
-                },
-                template: '<ng-include src="contentUrl"/>'
             }
+
+            $scope.Notificar = function (id) {
+                console.log("Notificar:" + id);
+                //Abre el formulario para notificar en una nueva ventana del navegador
+                //agregar en url el prestador desde el scope
+                $window.open('http://localhost:5000/notificacionges/?id=' + id + '&practitioner=' + $scope.practitioner.uuid);
+            }
+        }
+        
+        return {
+            restrict: 'E',
+            link: link,
+            scope: {
+                patient: "=",
+                section: "="
+            },
+            template: '<ng-include src="contentUrl"/>'
+        }
     }]).directive('deathCertificate', ['observationsService', 'appService', 'spinner', function (observationsService, appService, spinner) {
         var link = function ($scope) {
             var conceptNames = ["WEIGHT"];
