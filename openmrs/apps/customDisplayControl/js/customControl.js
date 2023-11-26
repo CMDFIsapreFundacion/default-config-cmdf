@@ -67,6 +67,12 @@ angular.module('bahmni.common.displaycontrol.custom')
                 $window.open('http://localhost:5000/notificacionges/' + id);
                 // + '&practitioner=' + $scope.practitioner.uuid);
             }
+            $scope.VerNotificaciom = function (id) {
+                console.log("Ver:" + id);
+                //Abre el formulario para ver la notificacion en una nueva ventana del navegador
+                //agregar en url el prestador desde el scope
+                $window.open('http://localhost:5000/vernotificacionges/' + id);
+            }
         }
         
         return {

@@ -16,12 +16,13 @@
                             <td ng-if="notificacion.estado == 'P'">Pendiente</td>
                             <td ng-if="notificacion.estado == 'N'">Notificada</td>
                             <td ng-if="notificacion.estado == 'D'">Descartada</td>
+                            <td ng-if="notificacion.estado == 'F'">Firmada por Paciente</td>
                             <td ng-if="notificacion.estado == 'P'">
                                    <button ng-click="Notificar(notificacion.id)">Notificar</button>
                                    <button ng-click="descartarNotificacion(notificacion.id)">Descartar</button>
                             </td>
-                            <td ng-if="notificacion.estado == 'N'">
-                                   <button onclick="window.open('http://localhost/formularioges', '_blank')">Ver</button>
+                            <td ng-if="notificacion.estado == 'N' || notificacion.estado == 'F' ">
+                                   <button ng-click="VerNotificaciom(notificacion.id)">Ver</button>
                             </td>
                             <td ng-if="notificacion.estado == 'D'"></td>
                      </tr>
