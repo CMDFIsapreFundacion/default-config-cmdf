@@ -28,7 +28,6 @@ angular.module('bahmni.common.displaycontrol.custom')
             };
 
             $scope.encounterProvider = retrieveProviderCookieData();
-            $scope.user = $rootScope.currentUser;
             $scope.user_bahmni_cookie = $bahmniCookieStore.get(bahmni.user);
             $scope.user_cookie = $cookies.get('bahmni.user');
             
