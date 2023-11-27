@@ -20,9 +20,9 @@ angular.module('bahmni.common.displaycontrol.custom')
     }]).directive('notificacionGes', ['$http', '$q', '$rootScope', '$window', 'appService', 'encounterService', 'virtualConsultService', '$bahmniCookieStore', function ($http, $q, $rootScope, $window, appService, encounterService, virtualConsultService, $bahmniCookieStore) {
         var link = function ($scope) {
             $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
-            $scope.activeVisit = $scope.visitHistory.activeVisit;
+            //$scope.activeVisit = $scope.visitHistory.activeVisit;
 
-            var DateUtil = Bahmni.Common.Util.DateUtil;
+            //var DateUtil = Bahmni.Common.Util.DateUtil;
             var retrieveProviderCookieData = function () {
                 return $bahmniCookieStore.get(Bahmni.Common.Constants.grantProviderAccessDataCookieName);
             };
