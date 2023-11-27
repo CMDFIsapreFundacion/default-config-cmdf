@@ -17,18 +17,10 @@ angular.module('bahmni.common.displaycontrol.custom')
             link: link
         }
 
-    }]).directive('notificacionGes', ['$http', '$q', '$rootScope', '$window', 'appService', 'encounterService', 'virtualConsultService', '$bahmniCookieStore', '$cookies', function ($http, $q, $rootScope, $window, appService, encounterService, virtualConsultService, $bahmniCookieStore, $cookies) {
+    }]).directive('notificacionGes', ['$window', 'appService','$cookies', function ($window, appService, $cookies) {
         var link = function ($scope) {
             $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
-            //$scope.activeVisit = $scope.visitHistory.activeVisit;
 
-            //var DateUtil = Bahmni.Common.Util.DateUtil;
-            //var retrieveProviderCookieData = function () {
-            //    return $bahmniCookieStore.get(Bahmni.Common.Constants.bahmni.user);
-            //};
-
-            //$scope.encounterProvider = retrieveProviderCookieData();
-            //$scope.user_bahmni_cookie = $bahmniCookieStore.get(bahmni.user);
             $scope.user_cookie = $cookies.get('bahmni.user');
             
             console.log($scope);
@@ -75,7 +67,7 @@ angular.module('bahmni.common.displaycontrol.custom')
                 console.log("Notificar:" + id);
                 //Abre el formulario para notificar en una nueva ventana del navegador
                 //agregar en url el prestador desde el scope
-                $window.open('http://localhost:5000/notificacionges/' + id);
+                $window.open('http://localhost:5000/notificacionges/' + id+'?practitioner=' + $scope.user_cookie);
                 // + '&practitioner=' + $scope.practitioner.uuid);
             }
             $scope.VerNotificaciom = function (id) {
