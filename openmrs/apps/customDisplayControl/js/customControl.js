@@ -17,9 +17,17 @@ angular.module('bahmni.common.displaycontrol.custom')
             link: link
         }
 
-    }]).directive('notificacionGes', ['$http', '$q', '$window', 'appService', 'virtualConsultService', function ($http, $q, $window, appService, virtualConsultService) {
+    }]).directive('notificacionGes', ['$http', '$q', '$rootScope', '$window', 'appService', 'encounterService', 'virtualConsultService', '$bahmniCookieStore', function ($http, $q, $rootScope, $window, appService, encounterService, virtualConsultService, $bahmniCookieStore) {
         var link = function ($scope) {
             $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/notificacionGES.html";
+            $scope.activeVisit = $scope.visitHistory.activeVisit;
+
+            var DateUtil = Bahmni.Common.Util.DateUtil;
+            var retrieveProviderCookieData = function () {
+                return $bahmniCookieStore.get(Bahmni.Common.Constants.grantProviderAccessDataCookieName);
+            };
+
+            $scope.encounterProvider = retrieveProviderCookieData();
             console.log($scope);
 
             fetch('http://localhost:4000/ges?patientidentifier=' + $scope.patient.identifier)
