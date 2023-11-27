@@ -23,11 +23,11 @@ angular.module('bahmni.common.displaycontrol.custom')
             //$scope.activeVisit = $scope.visitHistory.activeVisit;
 
             //var DateUtil = Bahmni.Common.Util.DateUtil;
-            var retrieveProviderCookieData = function () {
-                return $bahmniCookieStore.get(Bahmni.Common.Constants.bahmni.user);
-            };
+            //var retrieveProviderCookieData = function () {
+            //    return $bahmniCookieStore.get(Bahmni.Common.Constants.bahmni.user);
+            //};
 
-            $scope.encounterProvider = retrieveProviderCookieData();
+            //$scope.encounterProvider = retrieveProviderCookieData();
             $scope.user_bahmni_cookie = $bahmniCookieStore.get(bahmni.user);
             $scope.user_cookie = $cookies.get('bahmni.user');
             
