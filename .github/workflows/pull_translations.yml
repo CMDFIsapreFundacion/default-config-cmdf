@@ -30,6 +30,7 @@ jobs:
 
       - name: Descargar Traducciones Españolas
         run: |
+          cd   ${{ github.workspace }}/
           tx pull -l es  # Asume que 'es' es el código de idioma para español
 
       - name: Commit and push changes
