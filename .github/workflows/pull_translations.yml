@@ -19,6 +19,9 @@ jobs:
       - name: Instalar Cliente de Transifex
         run: |
           curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
+          
+      - name: Configurar PATH para el cliente de Transifex
+        run: echo "/home/runner/work/default-config-cmdf/default-config-cmdf:$PATH" >> $GITHUB_PATH
 
       - name: Configurar Acceso a Transifex
         run: |
