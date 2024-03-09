@@ -1,9 +1,9 @@
 {
   "MODULE_LABEL_ACTIVE_KEY": "សកម្ម",
-  "MODULE_LABEL_PROGRAMS_KEY": "កម្មវិធី",
-  "MODULE_LABEL_MY_PATIENTS_KEY": "អ្នកជម្ងឺរបស់ខ្ញុំ",
-  "MODULE_LABEL_ACTIVE_PATIENTS_BY_LOCATION": "អ្នកជម្ងឺតាមតំបន់",
-  "MODULE_LABEL_OPD_1_KEY": "អាគាពិនិត្យជម្ងឺក្រៅ-1",
+  "MODULE_LABEL_PROGRAMS_KEY": "Programs",
+  "MODULE_LABEL_MY_PATIENTS_KEY": "My Patients",
+  "MODULE_LABEL_ACTIVE_PATIENTS_BY_LOCATION": "PatientsByLocation",
+  "MODULE_LABEL_OPD_1_KEY": "OPD-1",
   "MODULE_LABEL_ALL_KEY": "ទាំងអស់",
 
   "DASHBOARD_TITLE_LAB_RESULTS_KEY": "លទ្ធផលពិសោធន៍",
@@ -16,7 +16,7 @@
   "DASHBOARD_TITLE_DISPOSITION_KEY": "ការបញ្ជូន",
   "DASHBOARD_TITLE_DIAGNOSIS_KEY": "Diagnoses",
   "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY": "ពត៍មានលម្អិត​នៃការទទូលសំរាក",
-  "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY": "តម្លៃអាហារូបត្ថម្ភ",
+  "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY": "Nutritional Values",
   "DASHBOARD_TITLE_SECOND_VITALS_KEY": "សញ្ញាអាយុជីវិតលើកទីពីរ",
   "DASHBOARD_TITLE_GYNAECOLOGY_KEY": "រោគស្រ្តី",
   "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY": "ប្រវត្តិ និងការពិនិត្យ",
@@ -42,7 +42,7 @@
   "DASHBOARD_TAB_ORDERS_KEY": "បញ្ជា",
 
   "LAB_INVESTIGATIONS_KEY":"ការធ្វើពិសោធន៍",
-  "PACS_ORDERS_VISIT_PAGE_KEY": "ទំព័រ​បញ្ជាPACSអ្នកជម្ងឺ",
+  "RADIOLOGY_ORDERS_KEY": "Radiology Orders",
 
   "DISCHARGE_SUMMARY_DIAGNOSIS_KEY" :"Diagnoses",
 
@@ -73,7 +73,7 @@
   "PATIENT_VISIT_PAGE_KEY":"ទំព័រ​ពិនិត្យអ្នកជម្ងឺ",
   "HOME_DASHBOARD_KEY":"ផ្ទាំងទំព័រដើម",
   "MEDICATION_CHANGE_DURATION_BUTTON": "ផ្លាស់ប្តូររយៈពេល",
-  "DASHBOARD_TITLE_Consultation_KEY": "កំណត់ត្រាពិគ្រោះជម្ងឺ",
+  "DASHBOARD_TITLE_Consultation_KEY": "Consultation Notes",
   "DASHBOARD_TITLE_APPOINTMENTS_KEY": "ការណាត់ជួប",
   "DASHBOARD_APPOINTMENTS_SLOT_KEY": "រន្ធដោតពេលវេលា",
   "DASHBOARD_APPOINTMENTS_SERVICE_KEY": "សេវាកម្ម",

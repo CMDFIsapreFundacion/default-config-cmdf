@@ -1,9 +1,9 @@
 {
   "MODULE_LABEL_ACTIVE_KEY": "ໃຊ້ງານຢູ່",
-  "MODULE_LABEL_PROGRAMS_KEY": "ໂປຣແກຣມ",
-  "MODULE_LABEL_MY_PATIENTS_KEY": "ຄົນເຈັບຂອງຂ້ອຍ",
-  "MODULE_LABEL_ACTIVE_PATIENTS_BY_LOCATION": "ຄົນເຈັບຕາມແຕ່ລະພະແນກ",
-  "MODULE_LABEL_OPD_1_KEY": "ເຂດນອກ -1",
+  "MODULE_LABEL_PROGRAMS_KEY": "Programs",
+  "MODULE_LABEL_MY_PATIENTS_KEY": "My Patients",
+  "MODULE_LABEL_ACTIVE_PATIENTS_BY_LOCATION": "PatientsByLocation",
+  "MODULE_LABEL_OPD_1_KEY": "OPD-1",
   "MODULE_LABEL_ALL_KEY": "ທັງໝົດ",
 
   "DASHBOARD_TITLE_LAB_RESULTS_KEY": "ຜົນກວດຂອງຫ້ອງວິເຄາະ",
@@ -16,7 +16,7 @@
   "DASHBOARD_TITLE_DISPOSITION_KEY": "ການຈັດແຈງ",
   "DASHBOARD_TITLE_DIAGNOSIS_KEY": "Diagnoses",
   "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY": "ລາຍລະອຽດການຮັບຄົນເຈັບ",
-  "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY": "ຄຸນຄ່າທາງໂພຊະນາການ",
+  "DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY": "Nutritional Values",
   "DASHBOARD_TITLE_SECOND_VITALS_KEY": "ສຳຄັນຮອງລົງມາ",
   "DASHBOARD_TITLE_GYNAECOLOGY_KEY": "ພະແນກປະສູດພະຍາດຍິງ",
   "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY": "ປະຫວັດ ແລະ ການກວດ",
@@ -42,7 +42,7 @@
   "DASHBOARD_TAB_ORDERS_KEY": "ລາຍການກວດ",
 
   "LAB_INVESTIGATIONS_KEY":"ໃບສັ່ງກວດຫ້ອງວິເຄາະ",
-  "PACS_ORDERS_VISIT_PAGE_KEY": "ໜ້າລາຍການ Pacs",
+  "RADIOLOGY_ORDERS_KEY": "Radiology Orders",
 
   "DISCHARGE_SUMMARY_DIAGNOSIS_KEY" :"Diagnoses",
 
@@ -73,7 +73,7 @@
   "PATIENT_VISIT_PAGE_KEY":"ໜ້າລົງກວດຄົນເຈັບ",
   "HOME_DASHBOARD_KEY":"ແຖບເມນູຫຼັກ",
   "MEDICATION_CHANGE_DURATION_BUTTON": "ປ່ຽນແປງໄລຍະເວລາ",
-  "DASHBOARD_TITLE_Consultation_KEY": "ບັນທຶກການໃຫ້ຄຳປືກສາ",
+  "DASHBOARD_TITLE_Consultation_KEY": "Consultation Notes",
   "DASHBOARD_TITLE_APPOINTMENTS_KEY": "ການນັດໝາຍ",
   "DASHBOARD_APPOINTMENTS_SLOT_KEY": "ຊ່ອງຕໍາແໜ່ງ",
   "DASHBOARD_APPOINTMENTS_SERVICE_KEY": "ໃຫ້ບໍລິການ",
