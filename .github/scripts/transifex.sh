@@ -20,8 +20,8 @@ if [ "$1" == "push" ]; then
     tx push -s
 elif [ "$1" == "pull" ]; then
     echo "Pulling translations from Transifex..."
-    #tx pull -t -s --mode reviewed --use-git-timestamps
-    tx pull -t 
+    tx pull -t -s --mode reviewed --use-git-timestamps
+   
     
 else
     echo "Invalid operation. Please specify either 'push' or 'pull'."
