@@ -15,8 +15,8 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-           with:
-            token: ${{ secrets.MY_PAT }} # Utiliza PAT en lugar del GITHUB_TOKEN predeterminado
+        with:
+          token: ${{ secrets.MY_PAT }} # Utiliza PAT en lugar del GITHUB_TOKEN predeterminado
 
       - name: Pull Translations from Transifex
         run: |
@@ -28,7 +28,6 @@ jobs:
         id: auto-commit-action
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-        
           commit_message: "[Bahmni Infra] | Add. Update Translation Resources"
           branch: ${{ github.ref }}
           file_pattern: 'openmrs/i18n/**/*.json'
