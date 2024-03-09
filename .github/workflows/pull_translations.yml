@@ -20,7 +20,7 @@ jobs:
 
       - name: Pull Translations from Transifex
         run: |
-          bash .github/scripts/transifex.sh pull
+          bash .github/scripts/transifex.sh pull -l es
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
