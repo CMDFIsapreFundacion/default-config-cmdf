@@ -15,31 +15,20 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
+           with:
+            token: ${{ secrets.MY_PAT }} # Utiliza PAT en lugar del GITHUB_TOKEN predeterminado
 
-      - name: Instalar Cliente de Transifex
+      - name: Pull Translations from Transifex
         run: |
-          curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
-          
-      - name: Configurar PATH para el cliente de Transifex
-        run: echo "/home/runner/work/default-config-cmdf/default-config-cmdf:$PATH" >> $GITHUB_PATH
-
-      - name: Configurar Acceso a Transifex
-        run: |
-          echo "[https://www.transifex.com]" > ${{ github.workspace }}/.transifexrc
-          echo "token = ${{ secrets.TX_TOKEN }}" >> ${{ github.workspace }}/.transifexrc
-          cat .transifexrc
-          cat .tx/config
-
-
-      - name: Descargar Traducciones Españolas
-        run: |
-          cd   ${{ github.workspace }}/
-          tx pull -l es  # Asume que 'es' es el código de idioma para español
+          bash .github/scripts/transifex.sh pull
+        env:
+          TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
       - name: Commit and push changes
         id: auto-commit-action
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
+        
           commit_message: "[Bahmni Infra] | Add. Update Translation Resources"
           branch: ${{ github.ref }}
           file_pattern: 'openmrs/i18n/**/*.json'
