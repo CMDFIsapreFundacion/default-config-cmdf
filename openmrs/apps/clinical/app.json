@@ -26,8 +26,8 @@
         "hideConditions": false,
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "enableLabOrderOptions":["Urgent", "NeedsPrint"],
-        "quickPrints":false,
-        "allowAdhocTeleConsultation": false,
+        "quickPrints":true,
+        "allowAdhocTeleConsultation": true,
         "teleConsultationDomain": "meet.jit.si",
         "networkConnectivity" : {
             "showNetworkStatusMessage": false,
@@ -77,11 +77,11 @@
             "Radiology": "Radiology Order",
             "Endoscopy": "Endoscopy Order"
         },
-        "allowConsultationWhenNoOpenVisit": false,
+        "allowConsultationWhenNoOpenVisit": true,
         "defaultVisitType": "OPD",
         "visitTypeForRetrospectiveEntries": "Special OPD",
         "maxConceptSetLevels": 3,
-        "allowOnlyCodedDiagnosis": false,
+        "allowOnlyCodedDiagnosis": true,
         "conceptSetUI": {
             "Chief Complaint Data": {
                 "autocomplete":true,
