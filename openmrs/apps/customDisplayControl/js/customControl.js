@@ -26,8 +26,8 @@ angular.module('bahmni.common.displaycontrol.custom')
                 console.log($scope);
     
                 // Obtener la dirección IP del host
-                var hostfrontend = $window.location.host + ':8092/';
-                var hostbackend = $window.location.host + ':8093/';
+                var hostfrontend = $window.location.host + ':8092';
+                var hostbackend = $window.location.host + ':8093';
                 //var hostfrontend = $window.location.host + ':8092/notificacion';
                 //var hostbackend = $window.location.host + ':8093/apinotificacion';
     
