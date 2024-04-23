@@ -26,10 +26,10 @@ angular.module('bahmni.common.displaycontrol.custom')
                 console.log($scope);
     
                 // Obtener la dirección IP del host
-                var hostfrontend = $window.location.host + ':8092';
-                var hostbackend = $window.location.host + ':8093';
-                //var hostfrontend = $window.location.host + ':8092/notificacion';
-                //var hostbackend = $window.location.host + ':8093/apinotificacion';
+                //var hostfrontend = $window.location.host + ':8092';
+                //var hostbackend = $window.location.host + ':8093';
+                var hostfrontend = $window.location.host + '/notificacion';
+                var hostbackend = $window.location.host + '/apinotificacion';
     
                 fetch('http://' + hostbackend + '/ges?patientidentifier=' + $scope.patient.identifier)
                 //fetch('http://127.0.0.1:5001/ges?patientidentifier=' + $scope.patient.identifier)
