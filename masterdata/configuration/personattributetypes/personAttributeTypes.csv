@@ -2,7 +2,6 @@ Uuid,Void/Retire,Name,Description,Format,Foreign uuid,Searchable
 ,0,givenNameLocal,Nombre Social,java.lang.String,,,
 ,0,familyNameLocal,2do Apellido Social,java.lang.String,,,
 ,0,middleNameLocal,1er Apellido Social,java.lang.String,,,
-,0,caste,Caste,java.lang.String,,yes
 ,0,Prevision_de_Salud,Prevision de Salud,org.openmrs.Concept,96,yes
 ,0,education,Educacion,org.openmrs.Concept,102,yes
 ,0,occupation,Ocupacion,org.openmrs.Concept,109,yes
