@@ -37,6 +37,7 @@
                 "displayOrder":1
             },
             "notificacionGes": {
+		"translationKey":"DASHBOARD_TITLE_NOTIFICACION_GES",
                 "type": "custom",
                 "displayOrder": 3,
                 "config": {
