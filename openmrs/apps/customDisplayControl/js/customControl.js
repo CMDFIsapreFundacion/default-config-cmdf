@@ -265,10 +265,11 @@ angular.module('bahmni.common.displaycontrol.custom')
                 withCredentials: true
             });
         };
-        var transformDate = function (dateTime) {
-            return Bahmni.Common.Util.DateUtil.formatDateWithoutTimeToLocal(
-                dateTime,
-            )
+
+        var transformDate = function (dateTimeArray) {
+            var dateTime = dateTimeArray.slice();
+            dateTime[1] = dateTime[1] - 1
+            return Bahmni.Common.Util.DateUtil.formatDateWithoutTimeToLocal(dateTime)
         }
 
         var transformTime = function (dateTime) {
@@ -314,7 +315,7 @@ angular.module('bahmni.common.displaycontrol.custom')
         });
 
         $scope.goToListView = function () {
-            $window.open('/bahmni/appointments/#/home/manage/appointments/list');
+            $window.open('/appointments/#/home/manage/appointments/list');
         };
         $scope.openJitsiMeet = function (appointmentIndex) {
             var uuid = $scope.upcomingAppointmentsUUIDs[appointmentIndex];

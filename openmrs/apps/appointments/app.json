@@ -8,7 +8,7 @@
     }
   ],
   "config": {
-    "allowVirtualConsultation": false,
+    "allowVirtualConsultation": true,
     "minCharLengthToTriggerPatientSearch": 3,
     "enableSpecialities": true,
     "maxAppointmentProviders": 4,
@@ -56,6 +56,8 @@
     "recurrence": {
       "defaultNumberOfOccurrences": 10
     },
-    "additionalInfoColumns": {"Language": "English"}
+    "additionalInfoColumns": {"Language": "English"},
+    "enableAppointmentStatusOption": true,
+    "enableDetailedSummaryView": true
   }
 }
