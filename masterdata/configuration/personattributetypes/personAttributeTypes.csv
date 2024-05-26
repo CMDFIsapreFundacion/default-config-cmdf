@@ -1,22 +1,14 @@
-﻿Uuid;Void/Retire,Name,Description,Format,Foreign uuid,Searchable
-,0,givenNameLocal,Nombre Social,java.lang.String,,
-,0,familyNameLocal,Apellido Social,java.lang.String,,
-,0,middleNameLocal,Segundo Nombre Social,java.lang.String,,
+Uuid,Void/Retire,Name,Description,Format,Foreign uuid,Searchable
+,0,givenNameLocal,Nombre Social,java.lang.String,,,
+,0,familyNameLocal,2do Apellido Social,java.lang.String,,,
+,0,middleNameLocal,1er Apellido Social,java.lang.String,,,
 ,0,caste,Caste,java.lang.String,,yes
-,0,Prevision de Salud,Prevision de Salud;org.openmrs.Concept,96,yes
-,0,education;Educacionn,org.openmrs.Concept,102,yes
-,0,occupation;Ocupacion,org.openmrs.Concept,109,yes
+,0,Prevision_de_Salud,Prevision de Salud,org.openmrs.Concept,96,yes
+,0,education,Educacion,org.openmrs.Concept,102,yes
+,0,occupation,Ocupacion,org.openmrs.Concept,109,yes
 ,0,primaryContact,Contacto Primario,java.lang.String,,yes
 ,0,secondaryContact,Contacto Secundario,java.lang.String,,yes
 ,0,primaryRelative,Apellido Materno,java.lang.String,,yes
-,0,secondaryIdentifier,Identificador Secundario,java.lang.String,yes
-,1,landHolding,Land Holding (in acres),java.lang.Integer,,yes
-,1,debt,debt (in Rs);java.lang.String,,yes
-,1,distanceFromCenter,Distance From Center (in km),java.lang.Float,,yes
-,0,isUrban,Es Urbano?,java.lang.Boolean,,yes
-,1,cluster,cluster;org.openmrs.Concept,1173,yes
-,1,RationCard,Ration Card Type,org.openmrs.Concept,1174,yes
-,1,familyIncome,Family Income (per month in Rs);org.openmrs.Concept,1175,
-,0,E-Mail,,java.lang.String,,yes
-,0,Teléfono,,java.lang.String,,
-,0,email,Email Address,java.lang.String,,yes
+,0,secondaryIdentifier,Identificador Secundario,java.lang.String,,yes
+,0,E_Mail,E-Mail,java.lang.String,,yes
+,0,Telefono,Teléfono,java.lang.String,,,
